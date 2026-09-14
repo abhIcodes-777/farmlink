@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Astra-6 theme styling */
+body {
+  font-family: var(--font-sans);
+  background-color: #030704;
+  color: #e2e8f0;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Glassmorphism & Cyber Gradients */
+.astra-glass {
+  background: rgba(8, 20, 14, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 255, 135, 0.12);
+}
+
+.astra-glass-card {
+  background: linear-gradient(135deg, rgba(10, 26, 18, 0.7) 0%, rgba(5, 13, 9, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 135, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.astra-glass-cyan {
+  background: linear-gradient(135deg, rgba(8, 26, 32, 0.7) 0%, rgba(4, 14, 18, 0.85) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.astra-glow-emerald {
+  box-shadow: 0 0 35px -5px rgba(0, 255, 135, 0.3);
+}
+
+.astra-glow-cyan {
+  box-shadow: 0 0 35px -5px rgba(0, 240, 255, 0.3);
+}
+
+.astra-border-glow {
+  position: relative;
+}
+.astra-border-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #00ff87, #00f0ff, #00ff87);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.25;
+  filter: blur(4px);
+  transition: opacity 0.3s ease;
+}
+.astra-border-glow:hover::after {
+  opacity: 0.6;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #040806;
+}
+::-webkit-scrollbar-thumb {
+  background: #143522;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff87;
+}
+
+/* Pulse radar animation */
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-radar {
+  animation: radar-sweep 8s linear infinite;
+}
+
+/* Grid background */
+.bg-grid-pattern {
+  background-image: radial-gradient(rgba(0, 255, 135, 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
